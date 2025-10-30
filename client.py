@@ -5,10 +5,10 @@ import time
 HOST = "127.0.0.1"
 PORT = 5000
 
-lock = threading.Lock()  # evita que prints se mezclen
+lock = threading.Lock()  # para evitar que se mezclen los prints
 
 def cliente(id_cliente):
-    """Cada cliente envía palabras y recibe respuestas."""
+    """Cada cliente envía palabras y recibe como respuesta la cantidad de letras."""
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.connect((HOST, PORT))
         with lock:

@@ -8,7 +8,7 @@ PORT = 5000
 
 task_queue = queue.Queue()
 
-# --- Configurar base de datos SQLite ---
+#  Configuracion base de datos SQLite
 def init_db():
     conn = sqlite3.connect("palabras.db")
     c = conn.cursor()
@@ -31,7 +31,7 @@ def guardar_en_db(palabra, letras, worker_id):
     conn.commit()
     conn.close()
 
-# --- Manejo de clientes y workers ---
+#  Manejo de clientes y workers 
 def handle_client(conn, addr):
     print(f"[Cliente conectado] {addr}")
     while True:
@@ -51,7 +51,6 @@ def worker(worker_id):
         resultado = len(palabra)
         print(f"[Worker {worker_id}] '{palabra}' → {resultado} letras")
 
-        # Guardar en la base de datos
         guardar_en_db(palabra, resultado, worker_id)
 
         try:
@@ -61,7 +60,7 @@ def worker(worker_id):
         task_queue.task_done()
 
 def start_server():
-    init_db()  # inicializa la base de datos
+    init_db()  
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.bind((HOST, PORT))
         s.listen()
