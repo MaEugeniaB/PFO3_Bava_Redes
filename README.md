@@ -1,6 +1,6 @@
 # María Eugenia Bava
 
-## Diagrama de un Sistema Distribuido
+## 1. Diseño de un Diagrama de un Sistema Distribuido
 
 ![Vista previa](diagrama.png)
 
@@ -11,7 +11,8 @@
 - Almacenamiento (PostgreSQL / S3) → capa de persistencia de datos y resultados.
 
 
-## Descripción general
+## 2. Implementación en Python
+### Descripción general
 
 Este proyecto implementa un sistema distribuido simple en Python que utiliza sockets para la comunicación entre un servidor y múltiples clientes.
 El servidor distribuye tareas a 3 workers concurrentes, los cuales procesan las solicitudes (en este caso, contar la cantidad de letras de una palabra) y devuelven el resultado al cliente.
@@ -19,7 +20,7 @@ Además, las tareas procesadas se almacenan en una base de datos SQLite.
 
 ---
 
-## Componentes
+### Componentes
 
 🖥️ server.py
 
@@ -41,7 +42,7 @@ Se puede escribir "salir" para cerrar la conexión de cada cliente.
 
 ---
 
-## Ejecución paso a paso
+### Ejecución paso a paso
 
 1️⃣ Iniciar el servidor:
 
@@ -69,7 +70,7 @@ Cuando todos los clientes cierren, podés detener el servidor (Ctrl + C).
 
 ---
 
-## Tecnologías utilizadas
+### Tecnologías utilizadas
 
 Python 3.x
 
@@ -83,7 +84,7 @@ sqlite3 (almacenamiento persistente)
 
 ---
 
-## Posibles mejoras
+### Posibles mejoras
 
 Agregar balanceador de carga o cola distribuida (RabbitMQ).
 
