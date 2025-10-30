@@ -51,7 +51,7 @@ python server.py
 
 2️⃣ Ejecutar los clientes (en otra terminal):
 
-python multi_client.py
+python client.py
 
 
 3️⃣ Interacción:
@@ -82,13 +82,5 @@ queue (cola de tareas compartida)
 
 sqlite3 (almacenamiento persistente)
 
----
 
-### Posibles mejoras
-
-Agregar balanceador de carga o cola distribuida (RabbitMQ).
-
-Registrar la hora de recepción y procesamiento de cada tarea.
-
-Implementar una interfaz web o móvil como cliente.
 
